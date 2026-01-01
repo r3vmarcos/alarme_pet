@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Alarme Pet</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-950 h-screen w-screen overflow-hidden font-sans">
+    <!-- Tela Principal -->
+    <div id="main-screen" class="h-full w-full flex flex-col p-4 gap-4 transition-all duration-300">
+      <header class="text-center space-y-2">
+        <h1 class="text-4xl">🚨🚨🚨🚨🚨</h1>
+        <h1 class="text-2xl font-bold text-gray-100">Alarme do Scooby 🐶</h1>
+      </header>
+
+      <main class="flex-1 flex flex-col justify-center gap-6">
+        <!-- Botão 1 -->
+        <button
+          onclick="startAlarm('xixi')"
+          class="flex-1 w-full bg-yellow-500 hover:bg-yellow-400 active:bg-yellow-600 text-yellow-900 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-2 transition-transform active:scale-95 border-b-8 border-yellow-600"
+        >
+          <span class="text-6xl mb-4">🐶➕💧</span>
+          <span class="text-3xl font-black uppercase tracking-wider">Scooby fez</span>
+          <span class="text-3xl font-black uppercase tracking-wider">"XIXI"</span>
+        </button>
+
+        <!-- Botão 2 -->
+        <button
+          onclick="startAlarm('coco')"
+          class="flex-1 w-full bg-yellow-900 hover:bg-yellow-800 active:bg-amber-900 text-amber-100 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-2 transition-transform active:scale-95 border-b-8 border-amber-950"
+        >
+          <span class="text-6xl mb-4">🐶➕💩</span>
+          <span class="text-3xl font-black uppercase tracking-wider">Scooby fez</span>
+          <span class="text-3xl font-black uppercase tracking-wider">"COCÔ"</span>
+        </button>
+      </main>
+
+      <footer class="text-center py-2 text-xs text-gray-400">Todos os direitos reservador ao Scooby</footer>
+    </div>
+
+    <!-- Tela de Parar -->
+    <div id="stop-screen" class="hidden fixed inset-0 z-50 bg-red-600 flex-col items-center justify-center p-6">
+      <div class="animate-urgent flex flex-col items-center w-full h-full justify-center">
+        <h2 class="text-white text-6xl text-center font-bold text-shadow-lg text-shadow-black/100 mb-8 animate-bounce">ALARME ATIVADO!</h2>
+
+        <button
+          onclick="stopAlarm()"
+          class="w-full h-64 bg-white text-red-500 rounded-full shadow-2xl text-4xl font-black border-8 border-red-200 active:scale-90 transition-transform"
+        >
+          🛑 PARAR 🛑
+        </button>
+
+        <p class="mt-8 text-white opacity-80 text-lg text-center px-4" id="status-text">Tocando...</p>
+        <p class="text-white text-xs opacity-50 mt-2 hidden" id="error-detail"></p>
+        <h2 class="text-white text-4xl font-bold mt-8 text-center text-shadow-lg text-shadow-black/100 animate-bounce">PROVIDENCIAR A LIMPEZA!</h2>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
